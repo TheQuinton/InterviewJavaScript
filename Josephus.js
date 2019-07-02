@@ -14,7 +14,11 @@
  }
  console.log(josephus(5,2)); //should return 3
 /**
- * The position retruned by josephus(n-1,k) is adjusted because the recursive call considers the original position k % n + 1 as position 1.
+ * Breakdown:
+ * josephus(n,k) = (josephus(n-1,k)+ k-1) % n + 1
+ * josephus(1,k) = 1
+ * After the first person (kth from beginning) is killed, n-1 persons are left. So we call josephus(n – 1, k) to get the position with n-1 persons.
+ * The position retruned by josephus(n-1,k) is adjusted to consider the original position k % n + 1 as position 1.
  */
  // const variable + arrow function + ternary operator
  const josephusAlt = (n,k) => n === 1 ? 1 : (josephusAlt(n-1,k)+ k-1) % n + 1;
