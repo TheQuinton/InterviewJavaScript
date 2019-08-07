@@ -9,3 +9,9 @@
      return fn2(fn1(x));
    }
  }
+
+ const altCombine = (fn2, fn1) => {
+   (x) => {
+     fn2(fn1(x));
+   }
+ };
